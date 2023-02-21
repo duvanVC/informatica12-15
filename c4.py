@@ -31,19 +31,7 @@ class Sistema():
         # con un método de asignar
         self.__numero_pacientes = len(self.__lista_pacientes)
 
-    def ingresarPaciente(self):
-        #Solicitar datos
-        nombre = input("Ingrese el Nombre: ")
-        cedula =int(input("Ingrese la Cédula: "))
-        genero =input("Ingrese el Género: ")
-        servicio = input("Ingrese el Servicio: ")
-
-        #Crear objeto Paciente y le asigno los datos
-        p = Paciente()
-        p.asignarNombre(nombre)
-        p.asignarCedula(cedula)
-        p.asignarGenero(genero)
-        p.asignarServicio(servicio)
+    def ingresarPaciente(self,p):
 
         #Guardar paciente en la lista
         # self.__lista_pacientes[p.verCedula()]= p
@@ -75,7 +63,19 @@ def main():
         4. Salir
         > """))
         if menu == 1:
-            mi_sistema.ingresarPaciente()
+            #Solicitar datos
+            nombre = input("Ingrese el Nombre: ")
+            cedula =int(input("Ingrese la Cédula: "))
+            genero =input("Ingrese el Género: ")
+            servicio = input("Ingrese el Servicio: ")
+
+            #Crear objeto Paciente y le asigno los datos
+            p = Paciente()
+            p.asignarNombre(nombre)
+            p.asignarCedula(cedula)
+            p.asignarGenero(genero)
+            p.asignarServicio(servicio)
+            mi_sistema.ingresarPaciente(p)
         elif menu == 2:
             print("Número total de pacientes: " + str(mi_sistema.verNumeroPacientes()))
         elif menu == 3:
